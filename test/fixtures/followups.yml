@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  date: 2017-06-24
+  comments: MyText
+  prospect: one
+
+two:
+  type: 
+  date: 2017-06-24
+  comments: MyText
+  prospect: two

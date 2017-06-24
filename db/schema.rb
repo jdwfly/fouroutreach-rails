@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624054117) do
+ActiveRecord::Schema.define(version: 20170624072222) do
+
+  create_table "followups", force: :cascade do |t|
+    t.string "type"
+    t.date "date"
+    t.text "comments"
+    t.integer "prospect_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prospect_id"], name: "index_followups_on_prospect_id"
+  end
 
   create_table "prospects", force: :cascade do |t|
     t.string "name"
