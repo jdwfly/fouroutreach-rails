@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20170624072222) do
 
   create_table "followups", force: :cascade do |t|
-    t.string "type"
+    t.string "visit_type"
     t.date "date"
     t.text "comments"
     t.integer "prospect_id"

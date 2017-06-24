@@ -1,27 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
-  phone: MyString
-  email: MyString
-  point_of_contact: MyString
-  interests: MyString
-  comments: MyText
-  date_first_contact: 2017-06-23
-
-two:
-  name: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
-  phone: MyString
-  email: MyString
-  point_of_contact: MyString
-  interests: MyString
-  comments: MyText
-  date_first_contact: 2017-06-23
+tom:
+  name: Tom
+  address: "4020 E. Lancaster Blvd."
+  city: "Lancaster"
+  state: "CA"
+  zip: "93535"
+  phone: "661-946-4663"
+  email: "tom@example.com"
+  point_of_contact: "Doorknocking"
+  interests: "Space"
+  comments: "This guy is crazy"
+  date_first_contact: 2017-06-01
