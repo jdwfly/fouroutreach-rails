@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class ProspectTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def setup
+    @prospect = Prospect.new(name: 'Clark Kent')
+  end
+
+  test "should be valid" do
+    assert @prospect.valid?
+  end
 end
