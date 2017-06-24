@@ -9,4 +9,9 @@ class ProspectTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @prospect.valid?
   end
+
+  test "name should be present" do
+    @prospect.name = "      "
+    assert_not @prospect.valid?
+  end
 end
