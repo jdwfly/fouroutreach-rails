@@ -14,4 +14,10 @@ class ProspectTest < ActiveSupport::TestCase
     @prospect.name = "      "
     assert_not @prospect.valid?
   end
+
+  test "date first contact should be present" do
+    @prospect.date_first_contact = "           "
+    # Even though its set to invalid the default value will correct it
+    assert @prospect.valid?
+  end
 end
