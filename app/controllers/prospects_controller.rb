@@ -12,7 +12,7 @@ class ProspectsController < ApplicationController
   end
 
   def create
-    @prospect = User.new(prospect_params)
+    @prospect = Prospect.new(prospect_params)
     if @prospect.save
       flash[:success] = "Prospect successfully created!"
       redirect_to @prospect
