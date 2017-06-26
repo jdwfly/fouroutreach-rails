@@ -1,10 +1,11 @@
 class ProspectsController < ApplicationController
+  before_action :set_prospect, only: [:show, :edit, :update, :destroy]
+
   def index
     @prospects = Prospect.paginate(page: params[:page], per_page: 10)
   end
 
   def show
-    @prospect = Prospect.find(params[:id])
   end
 
   def new
@@ -22,11 +23,10 @@ class ProspectsController < ApplicationController
   end
 
   def edit
-    @prospect = Prospect.find(params[:id])
   end
 
   def update
-    if @prospect.update_attributes(prospect_params)
+    if @prospect.update(prospect_params)
       flash[:success] = "Prospect information updated!"
       redirect_to @prospect
     else
@@ -41,6 +41,10 @@ class ProspectsController < ApplicationController
   end
 
   private
+    def set_prospect
+      @prospect = Prospect.find(params[:id])
+    end
+
     def prospect_params
       params.require(:prospect).permit(:name,
                                        :address,
