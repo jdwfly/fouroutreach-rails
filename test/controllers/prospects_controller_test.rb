@@ -3,6 +3,7 @@ require 'test_helper'
 class ProspectsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @prospect = prospects(:tom)
+    @user = users(:joe)
   end
 
   test "should get index" do
@@ -27,7 +28,8 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
                                                 point_of_contact: @prospect.point_of_contact,
                                                 interests: @prospect.interests,
                                                 comments: @prospect.comments,
-                                                date_first_contact: @prospect.date_first_contact } }
+                                                date_first_contact: @prospect.date_first_contact,
+                                                user_id: @user } }
     end
 
     assert_redirected_to prospect_url(Prospect.last)
@@ -43,7 +45,7 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update vendor" do
+  test "should update prospect" do
     patch prospect_url(@prospect), params: { prospect: { name: @prospect.name,
                                               address: @prospect.address,
                                               city: @prospect.city,
@@ -54,7 +56,8 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
                                               point_of_contact: @prospect.point_of_contact,
                                               interests: @prospect.interests,
                                               comments: @prospect.comments,
-                                              date_first_contact: @prospect.date_first_contact } }
+                                              date_first_contact: @prospect.date_first_contact,
+                                              user_id: @user } }
     assert_redirected_to prospect_url(@prospect)
   end
 
