@@ -1,6 +1,6 @@
 class ProspectsController < ApplicationController
   def index
-    @prospects = Prospect.paginate(page: params[:page])
+    @prospects = Prospect.paginate(page: params[:page], per_page: 10)
   end
 
   def show

@@ -1,3 +1,10 @@
 <li>
   <%= link_to prospect.name, prospect %>
+  <p>
+    <%= prospect.address %><br>
+    <%= prospect.city %>, <%= prospect.state %>
+  </p>
+  <p>
+    <%= link_to "edit", edit_prospect_path(prospect) %>
+  </p>
 </li>
