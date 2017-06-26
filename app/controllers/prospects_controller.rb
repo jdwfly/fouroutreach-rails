@@ -3,18 +3,18 @@ class ProspectsController < ApplicationController
   before_action :set_prospect, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prospects = Prospect.paginate(page: params[:page], per_page: 10)
+    @prospects = current_user.prospects.paginate(page: params[:page], per_page: 10)
   end
 
   def show
   end
 
   def new
-    @prospect = Prospect.new
+    @prospect = current_user.prospects.new
   end
 
   def create
-    @prospect = Prospect.new(prospect_params)
+    @prospect = current_user.prospects.new(prospect_params)
     if @prospect.save
       flash[:success] = "Prospect successfully created!"
       redirect_to @prospect
