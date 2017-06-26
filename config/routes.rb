@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'prospects/index'
+  resources :prospects
 
   get 'static_pages/home'
 
