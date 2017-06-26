@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'will_paginate', '~> 3.1.0'
 gem 'faker'
 gem 'simple_form'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
