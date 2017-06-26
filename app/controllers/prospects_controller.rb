@@ -22,6 +22,7 @@ class ProspectsController < ApplicationController
   end
 
   def edit
+    @prospect = Prospect.find(params[:id])
   end
 
   def update
