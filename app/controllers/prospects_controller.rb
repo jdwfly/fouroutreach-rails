@@ -26,7 +26,7 @@ class ProspectsController < ApplicationController
   end
 
   def update
-    if @prospect.update_attributes(prosepct_params)
+    if @prospect.update_attributes(prospect_params)
       flash[:success] = "Prospect information updated!"
       redirect_to @prospect
     else
