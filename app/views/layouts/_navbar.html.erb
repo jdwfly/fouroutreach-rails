@@ -15,6 +15,13 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div id="loginoutbutton" class="text-right">
+        <% if user_signed_in? %>
+          <%= link_to "logout", destroy_user_session_path, class: 'btn btn-default' %>
+        <% else %>
+          <%= link_to "login", new_user_session_path, class: 'btn btn-default' %>
+        <% end %>
+      </div>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
