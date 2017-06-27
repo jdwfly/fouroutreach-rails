@@ -1,1 +1,37 @@
 <h1><%= @prospect.name %></h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <strong>Date First Contacted: </strong><%= @prospect.date_first_contact %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <strong>Address</strong><br>
+        <%= @prospect.address %><br>
+        <%= @prospect.city %>, <%= @prospect.state %> <%= @prospect.zip %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <strong>Phone: </strong><%= @prospect.phone %><br>
+          <strong>Email: </strong><%= @prospect.email %><br>
+          <strong>Point of Contact: </strong><%= @prospect.point_of_contact %><br>
+          <strong>Interests: </strong><%= @prospect.interests %><br>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <strong>Comments</strong>
+        <p>
+          <%= @prospect.comments || "None" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
