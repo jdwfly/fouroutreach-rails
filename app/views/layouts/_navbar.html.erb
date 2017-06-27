@@ -17,7 +17,7 @@
       </ul>
       <div id="loginoutbutton" class="text-right">
         <% if user_signed_in? %>
-          <%= link_to "logout", destroy_user_session_path, class: 'btn btn-default' %>
+          <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
         <% else %>
           <%= link_to "login", new_user_session_path, class: 'btn btn-default' %>
         <% end %>
