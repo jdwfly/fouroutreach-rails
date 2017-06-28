@@ -16,18 +16,31 @@ class FollowupsController < ApplicationController
   end
 
   def create
-    # TODO
+    @followup = @prospect.followups.new(followup_params)
+    if @followup.save
+      flash[:success] = "Followup successfully create!"
+      redirect_to @prospect
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def update
-    # TODO
+    if @followup.update(followup_params)
+      flash[:success] = "Followup updated!"
+      redirect_to @prospect
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    # TODO
+    Followup.find(params[:id]).destroy
+    flash[:success] = "Followup deleted!"
+    redirect_to @prospect
   end
 
   private

@@ -2,4 +2,9 @@
   <td><%= followup.date %></td>
   <td><%= followup.visit_type %></td>
   <td><%= followup.comments %></td>
+  <td>
+    <%= link_to 'Edit', edit_prospect_followup_path(prospect,followup), class: 'btn btn-default' %>
+    <%= link_to 'Delete', prospect_followup_url(prospect,followup),
+      method: :delete, class: 'btn btn-danger' %>
+  </td>
 </tr>

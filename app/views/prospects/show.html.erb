@@ -44,10 +44,11 @@
               <th>Date</th>
               <th>Visit Type</th>
               <th>Comments</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <%= render @prospect.followups %>
+            <%= render @prospect.followups, prospect: @prospect %>
           </tbody>
         </table>
         <% else %>
