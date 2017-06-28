@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 tom:
-  name: Tom
+  name: "Tom"
   address: "4020 E. Lancaster Blvd."
   city: "Lancaster"
   state: "CA"
@@ -12,10 +12,10 @@ tom:
   interests: "Space"
   comments: "This guy is crazy"
   date_first_contact: 2017-06-01
-  user_id: 1
+  user: joe
 
 richard:
-  name: Richard
+  name: "Richard"
   address: "1234 Main St."
   city: "Palmdale"
   state: "CA"
@@ -26,4 +26,4 @@ richard:
   interests: "Mining"
   comments: ""
   date_first_contact: 2017-06-05
-  user_id: 2
+  user: bob

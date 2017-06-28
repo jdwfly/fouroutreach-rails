@@ -1,6 +1,6 @@
 class Prospect < ApplicationRecord
   has_many :followups
-  belongs_to :users, optional: true
+  belongs_to :user
   validates :name, presence: true
   validates :date_first_contact, presence: true
   before_validation :init

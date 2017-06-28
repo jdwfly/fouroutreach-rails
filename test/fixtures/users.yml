@@ -6,9 +6,7 @@
 #
 
 joe:
-  id: 1
   email: 'joe@example.com'
 
 bob:
-  id: 2
   email: 'bob@example.com'

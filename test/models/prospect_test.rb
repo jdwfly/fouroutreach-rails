@@ -3,7 +3,7 @@ require 'test_helper'
 class ProspectTest < ActiveSupport::TestCase
 
   def setup
-    @prospect = Prospect.new(name: 'Clark Kent')
+    @prospect = prospects(:tom)
   end
 
   test "should be valid" do
