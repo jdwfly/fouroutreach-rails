@@ -1,0 +1,6 @@
+<%= simple_form_for [@prospect, @followup], html: { class: 'form-horizontal' } do |f| %>
+  <%= f.input :visit_type %>
+  <%= f.input :date %>
+  <%= f.input :comments %>
+  <%= f.submit :submit %>
+<% end %>
