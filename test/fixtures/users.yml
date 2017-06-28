@@ -7,4 +7,6 @@
 
 joe:
   email: 'joe@example.com'
-  
+
+bob:
+  email: 'bob@example.com'
