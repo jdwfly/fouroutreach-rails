@@ -4,6 +4,7 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   def setup
     @prospect = prospects(:tom)
+    @prospect_no_access = prospects(:richard)
     @user = users(:joe)
   end
 
@@ -50,7 +51,13 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to prospect_url(Prospect.last)
   end
 
-  test "should show prospect for signed in users" do
+  test "should not show prospect that a user cannot access" do
+    sign_in @user
+    get prospect_url(@prospect_no_access)
+    assert_redirected_to root_path
+  end
+
+  test "should show prospect that a user can access" do
     sign_in @user
     get prospect_url(@prospect)
     assert_response :success

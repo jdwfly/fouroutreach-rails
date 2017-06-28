@@ -8,8 +8,22 @@ tom:
   zip: "93535"
   phone: "661-946-4663"
   email: "tom@example.com"
-  point_of_contact: "Doorknocking"
+  point_of_contact: "Visitation"
   interests: "Space"
   comments: "This guy is crazy"
   date_first_contact: 2017-06-01
-  user_id: joe
+  user_id: 1
+
+richard:
+  name: Richard
+  address: "1234 Main St."
+  city: "Palmdale"
+  state: "CA"
+  zip: "93550"
+  phone: "661-250-1234"
+  email: "richard@example.com"
+  point_of_contact: "First time vistor"
+  interests: "Mining"
+  comments: ""
+  date_first_contact: 2017-06-05
+  user_id: 2

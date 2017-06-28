@@ -19,6 +19,7 @@ gem 'faker'
 gem 'simple_form'
 gem 'devise'
 gem 'json'
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

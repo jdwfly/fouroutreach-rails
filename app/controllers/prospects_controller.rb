@@ -7,6 +7,7 @@ class ProspectsController < ApplicationController
   end
 
   def show
+    authorize! :read, @prospect
   end
 
   def new
