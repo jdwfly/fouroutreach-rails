@@ -1,4 +1,5 @@
 class FollowupsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_prospect_by_id
   before_action :set_followup, only: [:show, :edit, :update, :destroy]

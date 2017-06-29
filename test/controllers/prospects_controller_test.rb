@@ -14,9 +14,9 @@ class ProspectsControllerTest < ActionDispatch::IntegrationTest
     get new_prospect_path
     assert_redirected_to new_user_session_path
     get prospect_url(@prospect)
-    assert_redirected_to new_user_session_path
+    assert_redirected_to root_path
     get edit_prospect_url(@prospect)
-    assert_redirected_to new_user_session_path
+    assert_redirected_to root_path
   end
 
   test "should get index for signed in users" do

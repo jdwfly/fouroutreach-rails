@@ -1,4 +1,5 @@
 class ProspectsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_prospect, only: [:show, :edit, :update, :destroy]
 
@@ -7,7 +8,6 @@ class ProspectsController < ApplicationController
   end
 
   def show
-    authorize! :read, @prospect
   end
 
   def new
