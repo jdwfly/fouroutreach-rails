@@ -1,5 +1,6 @@
 class FollowupsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :prospect
+  load_and_authorize_resource :followup, through: :prospect
   before_action :authenticate_user!
   before_action :set_prospect_by_id
   before_action :set_followup, only: [:show, :edit, :update, :destroy]
@@ -19,7 +20,7 @@ class FollowupsController < ApplicationController
   def create
     @followup = @prospect.followups.new(followup_params)
     if @followup.save
-      flash[:success] = "Followup successfully create!"
+      flash[:success] = "Followup successfully created!"
       redirect_to @prospect
     else
       render 'new'
