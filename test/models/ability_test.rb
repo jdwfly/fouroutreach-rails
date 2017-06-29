@@ -34,8 +34,8 @@ class AbilityTest < ActiveSupport::TestCase
 
   test "users can only create followups on prospects they own" do
     ability = Ability.new(@user)
-    assert ability.can?(:create, Followup.new(prospect: @prospect))
-    assert ability.cannot?(:create, Followup.new(prospect: @prospect_no_access))
+    assert ability.can?(:create, @prospect.followups.new)
+    assert ability.cannot?(:create, @prospect_no_access.followups.new)
   end
 
   test "users can only read followups on prospects they own" do
