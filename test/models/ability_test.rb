@@ -5,8 +5,10 @@ class AbilityTest < ActiveSupport::TestCase
     @user = users(:joe)
     @prospect = prospects(:tom)
     @prospect_no_access = prospects(:richard)
+    @followup = followups(:followup1)
+    @followup_no_access = followups(:followup2)
   end
-  
+
   test "user can only read prospects they own" do
     ability = Ability.new(@user)
     assert ability.can?(:read, @prospect)
@@ -28,5 +30,29 @@ class AbilityTest < ActiveSupport::TestCase
   test "users may create prospects" do
     ability = Ability.new(@user)
     assert ability.can?(:create, Prospect)
+  end
+
+  test "users can only create followups on prospects they own" do
+    ability = Ability.new(@user)
+    assert ability.can?(:create, Followup.new(prospect: @prospect))
+    assert ability.cannot?(:create, Followup.new(prospect: @prospect_no_access))
+  end
+
+  test "users can only read followups on prospects they own" do
+    ability = Ability.new(@user)
+    assert ability.can?(:read, @followup)
+    assert ability.cannot?(:read, @followup_no_access)
+  end
+
+  test "users can only edit followups on prospects they own" do
+    ability = Ability.new(@user)
+    assert ability.can?(:update, @followup)
+    assert ability.cannot?(:update, @followup_no_access)
+  end
+
+  test "users can only delete followups on prospects they own" do
+    ability = Ability.new(@user)
+    assert ability.can?(:delete, @followup)
+    assert ability.cannot?(:delete, @followup_no_access)
   end
 end

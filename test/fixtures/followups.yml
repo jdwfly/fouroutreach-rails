@@ -1,1 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+followup1:
+  visit_type: "Phone"
+  date: 2017-06-28
+  comments: "No answer"
+  prospect: :tom
+
+followup2:
+  visit_type: "Email"
+  date: 2017-06-28
+  comments:
+  prospect: :richard
