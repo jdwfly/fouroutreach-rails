@@ -25,9 +25,11 @@ class ProspectsController < ApplicationController
   end
 
   def edit
+    authorize! :update, @prospect
   end
 
   def update
+    authorize! :update, @prospect
     if @prospect.update(prospect_params)
       flash[:success] = "Prospect information updated!"
       redirect_to @prospect
