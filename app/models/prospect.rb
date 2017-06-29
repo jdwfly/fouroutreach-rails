@@ -1,5 +1,5 @@
 class Prospect < ApplicationRecord
-  has_many :followups
+  has_many :followups, dependent: :destroy
   belongs_to :user
   validates :name, presence: true
   validates :date_first_contact, presence: true

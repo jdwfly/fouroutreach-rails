@@ -23,8 +23,8 @@ class AbilityTest < ActiveSupport::TestCase
 
   test "user can only delete prospects they own" do
     ability = Ability.new(@user)
-    assert ability.can?(:delete, @prospect)
-    assert ability.cannot?(:delete, @prospect_no_access)
+    assert ability.can?(:destroy, @prospect)
+    assert ability.cannot?(:destroy, @prospect_no_access)
   end
 
   test "users may create prospects" do
@@ -52,7 +52,7 @@ class AbilityTest < ActiveSupport::TestCase
 
   test "users can only delete followups on prospects they own" do
     ability = Ability.new(@user)
-    assert ability.can?(:delete, @followup)
-    assert ability.cannot?(:delete, @followup_no_access)
+    assert ability.can?(:destroy, @followup)
+    assert ability.cannot?(:destroy, @followup_no_access)
   end
 end
