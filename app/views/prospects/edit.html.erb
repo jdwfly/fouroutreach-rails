@@ -1,4 +1,6 @@
-<h1>Update Prospect</h1>
+<% content_for :content_head do %>
+    <h1>Update <%= @prospect.name %></h1>
+<% end %>
 
 <%= render 'form', prospect: @prospect %>
 

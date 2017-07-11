@@ -1,14 +1,19 @@
-<%= simple_form_for @prospect, html: { class: 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :city %>
-  <%= f.input :state %>
-  <%= f.input :zip %>
-  <%= f.input :phone %>
-  <%= f.input :email %>
-  <%= f.input :point_of_contact %>
-  <%= f.input :interests %>
-  <%= f.input :comments %>
-  <%= f.input :date_first_contact %>
-  <%= f.submit :submit %>
-<% end %>
+<div class="box box-default">
+    <%= simple_form_for @prospect do |f| %>
+      <div class="box-body">
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :zip %>
+        <%= f.input :phone %>
+        <%= f.input :email %>
+        <%= f.input :point_of_contact %>
+        <%= f.input :interests %>
+        <%= f.input :comments %>
+        <%= f.input :date_first_contact %>
+        <%= f.submit :submit %>
+      </div>
+    <% end %>
+</div>
+
