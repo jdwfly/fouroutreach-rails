@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+      sessions: 'users/sessions'
+  }
   resources :prospects do
     resources :followups, only: [:new, :create, :update, :edit, :destroy]
   end
