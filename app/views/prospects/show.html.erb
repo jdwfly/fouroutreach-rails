@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12">
         <p>
-          <strong>Date First Contacted: </strong><%= @prospect.date_first_contact %>
+          <strong>Last Contacted: </strong><%= @prospect.last_update %>
         </p>
       </div>
     </div>
@@ -24,6 +24,9 @@
           <strong>Email: </strong><%= @prospect.email %><br>
           <strong>Point of Contact: </strong><%= @prospect.point_of_contact %><br>
           <strong>Interests: </strong><%= @prospect.interests %><br>
+        </p>
+        <p>
+          <strong>Date First Contacted: </strong><%= @prospect.date_first_contact %>
         </p>
       </div>
     </div>
@@ -50,7 +53,7 @@
             </tr>
           </thead>
           <tbody>
-            <%= render @prospect.followups, prospect: @prospect %>
+            <%= render @prospect.followups.sorted, prospect: @prospect %>
           </tbody>
         </table>
         <% else %>
