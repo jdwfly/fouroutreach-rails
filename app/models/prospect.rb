@@ -7,7 +7,11 @@ class Prospect < ApplicationRecord
   resourcify
 
   def last_update
-    self.followups.sorted.last.date || self.date_first_contact
+    if self.followups.sorted.last.nil?
+      self.date_first_contact
+    else
+      self.followups.sorted.last.date
+    end
   end
 
   private

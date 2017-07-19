@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-md-12">
         <p>
-          <strong>Phone: </strong><%= @prospect.phone %><br>
+          <strong>Phone: </strong><%= number_to_phone @prospect.phone %><br>
           <strong>Email: </strong><%= @prospect.email %><br>
           <strong>Point of Contact: </strong><%= @prospect.point_of_contact %><br>
           <strong>Interests: </strong><%= @prospect.interests %><br>
