@@ -4,6 +4,7 @@ class Prospect < ApplicationRecord
   validates :name, presence: true
   validates :date_first_contact, presence: true
   before_validation :init
+  resourcify
 
   def last_update
     self.followups.sorted.last.date || self.date_first_contact
