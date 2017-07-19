@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     resources :followups, only: [:new, :create, :update, :edit, :destroy]
   end
 
+  namespace :admin do
+    get 'dashboard', to: 'admin#dashboard'
+    get '', to: 'admin#dashboard'
+  end
+
   get 'static_pages/home'
 
   root 'prospects#index'
